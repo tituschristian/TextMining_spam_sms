@@ -37,7 +37,7 @@ def lexicalAnalysis(sentence):
 	
 	#deleting link
 	for n, row in enumerate(words):
-		regex = r'((http(s)?://)[0-9a-z\./_+\(\)\$\#\&\!\?]+)'
+		regex = r'(((http(s)?:\/\/)|(www\.))[0-9a-z\.\/_\-+\(\)\$\#\&\!\?]+)'
 		find_urls= re.compile(regex)
 		url = find_urls.search(row)
 		if url is not None:
@@ -105,7 +105,7 @@ def generateTermInSentence(sentence):
 	return newSentence.rstrip()
 	
 def getAllTerm():
-	file = openFileCsv('data_coba.csv')
+	file = openFileCsv('data_coba_training.csv')
 	term = []
 	for row in file:
 		thisTerm = generateTerm(row["Teks"])
@@ -113,3 +113,7 @@ def getAllTerm():
 			if item not in term:
 				term.append(item)
 	return term
+
+file = openFileCsv('data_coba_training.csv')
+for i in range(30, 40):
+	print(generateTermInSentence(file[i]["Teks"]))
