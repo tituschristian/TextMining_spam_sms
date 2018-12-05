@@ -37,7 +37,7 @@ def lexicalAnalysis(sentence):
 	
 	#deleting link
 	for n, row in enumerate(words):
-		regex = r'((http(s)?://)[0-9a-z\./_+\(\)\$\#\&\!\?]+)'
+		regex = r'(((http(s)?:\/\/)|(www\.))[0-9a-z\.\/_\-+\(\)\$\#\&\!\?]+)'
 		find_urls= re.compile(regex)
 		url = find_urls.search(row)
 		if url is not None:
