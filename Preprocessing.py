@@ -105,7 +105,7 @@ def generateTermInSentence(sentence):
 	return newSentence.rstrip()
 	
 def getAllTerm():
-	file = openFileCsv('data_coba.csv')
+	file = openFileCsv('data_coba_training.csv')
 	term = []
 	for row in file:
 		thisTerm = generateTerm(row["Teks"])
