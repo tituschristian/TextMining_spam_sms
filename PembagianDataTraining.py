@@ -1,5 +1,4 @@
 import csv
-#'''
 
 def openFileCsv(namaFile):
 	data_hasil = []
@@ -59,13 +58,13 @@ def createFileCsv(namaFile, data0, data1 = [], data2 = []):
 			line_count += 1
 			
 		print(f'Processed write {line_count} lines.')
-'''
-list_zero = []
-list_one = []
-list_two = []
-list_data_uji = []
-data_set = openFileCsv('dataset_kemarin_malam.csv')
-generateData(data_set)
-createFileCsv('data_training.csv', list_zero, list_one, list_two)
-createFileCsv('data_uji.csv', list_data_uji)
-'''
+
+def run():
+	list_zero = []
+	list_one = []
+	list_two = []
+	list_data_uji = []
+	data_set = openFileCsv('dataset_kemarin_malam.csv')
+	generateData(data_set)
+	createFileCsv('data_training.csv', list_zero, list_one, list_two)
+	createFileCsv('data_uji.csv', list_data_uji)
