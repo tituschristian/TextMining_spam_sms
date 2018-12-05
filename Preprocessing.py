@@ -95,7 +95,15 @@ def generateTerm(sentence):
 	term = stopwordRemoval(token)
 	#print(term)
 	return term
-
+	
+def generateTermInSentence(sentence):
+	term = generateTerm(sentence)
+	newSentence = ""
+	for word in term:
+		newSentence += word + " "
+	#print(term)
+	return newSentence.rstrip()
+	
 def getAllTerm():
 	file = openFileCsv('data_coba.csv')
 	term = []
@@ -105,6 +113,3 @@ def getAllTerm():
 			if item not in term:
 				term.append(item)
 	return term
-
-#getAllTerm()
-#print(getAllTerm())
