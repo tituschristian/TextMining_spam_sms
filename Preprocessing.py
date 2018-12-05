@@ -113,7 +113,3 @@ def getAllTerm():
 			if item not in term:
 				term.append(item)
 	return term
-
-file = openFileCsv('data_coba_training.csv')
-for i in range(30, 40):
-	print(generateTermInSentence(file[i]["Teks"]))
