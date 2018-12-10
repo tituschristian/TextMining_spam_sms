@@ -68,3 +68,5 @@ def run():
 	generateData(data_set)
 	createFileCsv('data_training.csv', list_zero, list_one, list_two)
 	createFileCsv('data_uji.csv', list_data_uji)
+	
+run()
